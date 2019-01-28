@@ -1,0 +1,73 @@
+body{
+  color:#555;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:16px;
+  line-height:1.6em;
+  margin:0;
+}
+
+#skillBar{
+  overflow: hidden;
+  background-color:#4964af;
+  color: white;
+  padding: 0px 30px;
+}
+
+#container{
+  width:80%;
+  margin:auto;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+#table{
+  float: left;
+}
+
+#table table{
+  width: max-content;
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: #000;
+}
+
+#table td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#table th{
+  background-color:grey;
+
+  border: 1px solid black;
+}
+
+#table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#formular{
+  float: left;
+  margin-left: 10%;
+  margin-top: 5%;
+  display: block;
+}
+
+#formular input{
+  margin-bottom: 10px;
+}
+
+#buttons{
+  float: left;
+  margin-left: 10%;
+  margin-top: 5%;
+  display: block;
+}
+
+#buttons input{
+  margin-bottom: 10px;
+}
+
+
+

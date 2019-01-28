@@ -19,12 +19,12 @@ export class ApiService {
     this.apiEndpoint = environment.apiEndpoint;
   }
 
-  getRequest(path :string,  options?): Observable<any> {
-    return this.http.get(`${this.apiEndpoint}/path`)
+  getRequest(path: string,  options?): Observable<any> {
+    return this.http.get(`${this.apiEndpoint}/${path}`)
     .pipe(share());
   }
 
-  postRequest(path :string,  params, options?): Observable<any> {
+  postRequest(path: string,  params, options?): Observable<any> {
     return this.http.post(`${this.apiEndpoint}/${path}`, params)
     .pipe(share());
   }

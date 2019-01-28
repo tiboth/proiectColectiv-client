@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(authData).subscribe(response => {
       console.log(response);
-    })
+      alert('you are logged in');
+    });
   }
 
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import {forkJoin, Observable} from 'rxjs';
 import { ApiService } from './api-service.service';
-import { AuthUser } from '../shared/models/user';
+import {AuthUser, User} from '../shared/models/user';
+import {Skill} from '../shared/models/Skill';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,15 @@ export class LoginService {
   ) { }
 
   login(authData: AuthUser): Observable<any> {
-    return this.apiService.postRequest('loginUser', authData);
+    return this.apiService.postRequest('user/loginUser', authData);
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.apiService.getRequest('user/findAll');
+  }
+
+  getSkills(id: number): Observable<Skill[]> {
+    return this.apiService.getRequest('user/findSkills?id=' + id);
   }
 
 }
