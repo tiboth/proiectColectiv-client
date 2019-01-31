@@ -44,6 +44,10 @@ body {
     max-width: 150px; 
     max-height: 150px
   }
+
+  .inputs {
+    display: block
+  }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
