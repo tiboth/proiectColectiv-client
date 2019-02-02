@@ -10,7 +10,7 @@ import { ReportComponent } from './pages/report/report.component';
 import {SkillComponent} from './pages/skill/skill.component';
 import {FormsModule} from '@angular/forms';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     SkillComponent,
     DashboardComponent,
   ],
-  imports: [
+  imports: [BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,

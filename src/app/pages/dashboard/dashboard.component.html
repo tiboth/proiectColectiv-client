@@ -1,8 +1,7 @@
+
 <div class="sidenav">
-  <a href="#about">User</a>
-  <a href="#/report">Reports</a>
-  <a href="#/skill">Skills</a>
-  <a href="#contact">Contact</a>
+    <a routerLink="/skill" routerLinkActive="active">Skills</a>
+    <a routerLink="/report" routerLinkActive="active">Report</a>
   <div class="logo">
     <img src="https://www.ubbcluj.ro/images/logo/logo_cs.png">
   </div>
@@ -11,21 +10,29 @@
     <h2>User Info</h2>
     <br>
     <div class="forms">
-      <label for="firstname">First Name</label>
-      <input class="inputs" type="text" name="firstname" id="firstname">
-      <br>
-      <label for="lastname">Last Name</label>
-      <input class="inputs" type="text" name="lastname" id="lastname">
+      <label for="userName">User Name</label>
+      <input class="inputs" type="text" name="userName" id="userName" [(ngModel)]="user.username">
       <br>
       <label for="email">Email Address</label>
-      <input class="inputs" type="text" name="email" id="email">
+      <input class="inputs" type="text" name="email" id="email"  [(ngModel)]="user.email">
       <br>
-      <label for="age">Age</label>
-      <input class="inputs" type="text" name="age" id="age">
+      <label for="salary">Salary</label>
+      <input class="inputs" type="text" name="salary" id="salary" [(ngModel)]="user.salary">
       <br>
-      <label for="location">Location</label>
-      <input class="inputs" type="text" name="location" id="location">
+      <label for="skills">Skills</label>
+      <input class="inputs" type="text" name="skills" id="skills" [(ngModel)]="user.skills">
       <br>
-      <input type="submit" name="submit" value="Update">
+      <input type="submit" name="submit" value="Update" (click)="updateUser()">
+      <button class="btn btn-primary" (click)="toggleButton()">{{toggle}}</button>
+      <p *ngIf="toggle">sal</p>
+      <!-- <mat-selection-list>
+        <mat-list-option *ngFor="let element of list">
+          {{element}}
+        </mat-list-option>
+      </mat-selection-list>
+       -->
+      
+
     </div>
 </div>
+<router-outlet></router-outlet>
