@@ -9,13 +9,19 @@ import { AppComponent } from './app.component';
 import { ReportComponent } from './pages/report/report.component';
 import {SkillComponent} from './pages/skill/skill.component';
 import {FormsModule} from '@angular/forms';
+import { ProfileComponent } from './pages/profile/profile.component';
+import {LoginComponent} from './pages/login/login.component';
+import { HeaderComponent } from './pages/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ReportComponent,
-    SkillComponent
+    SkillComponent,
+    ProfileComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

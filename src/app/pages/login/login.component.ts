@@ -3,6 +3,9 @@ import { NgForm } from '@angular/forms';
 
 import { LoginService } from '../../services/login.service';
 import { AuthUser } from '../../shared/models/user';
+import {Router} from '@angular/router';
+import {isNumber} from 'util';
+import {isNumeric} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +18,8 @@ export class LoginComponent implements OnInit {
   password: string;
 
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -29,7 +33,13 @@ export class LoginComponent implements OnInit {
     console.log(authData);
 
     this.loginService.login(authData).subscribe(response => {
-      console.log(response);
+      if (isNumeric(response)) {
+        console.log('plmz');
+        sessionStorage.setItem('userId', response);
+        this.router.navigate(['profile']);
+      } else {
+        console.log(response);
+      }
       alert('you are logged in');
     });
   }

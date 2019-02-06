@@ -1,20 +1,34 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {LoginComponent} from './pages/login/login.component';
+import {ProfileComponent} from './pages/profile/profile.component';
+import {SkillComponent} from './pages/skill/skill.component';
+import {ReportComponent} from './pages/report/report.component';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: './pages/login/login.module#LoginModule'
+    path: '',
+    component : LoginComponent
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: 'login',
+    component : LoginComponent
+  },
+  {
+    path: 'profile',
+    component : ProfileComponent
+  },
+  {
+    path: 'skills',
+    component : SkillComponent
+  },
+  {
+    path: 'report',
+    component : ReportComponent
   },
   {
     path: '**',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    redirectTo : ''
   }
 ];
 

@@ -3,11 +3,12 @@ import {forkJoin, Observable} from 'rxjs';
 import { ApiService } from './api-service.service';
 import {AuthUser, User} from '../shared/models/user';
 import {Skill} from '../shared/models/Skill';
+import {Profil} from '../shared/models/Profil';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class ProfilService {
 
   constructor(
     private apiService: ApiService
@@ -17,8 +18,8 @@ export class LoginService {
     return this.apiService.postRequest('user/loginUser', authData);
   }
 
-  getUsers(): Observable<User[]> {
-    return this.apiService.getRequest('user/findAll');
+  getProfil(id: number): Observable<Profil> {
+    return this.apiService.getRequest('profil/?profilId=' + id);
   }
 
 }
