@@ -18,7 +18,7 @@ export class ProfilService {
     return this.apiService.postRequest('user/loginUser', authData);
   }
 
-  getProfil(id: number): Observable<Profil> {
+  getProfil(id: number): Observable<any> {
     return this.apiService.getRequest('profil/?profilId=' + id);
   }
 

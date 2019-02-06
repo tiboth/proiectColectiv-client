@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(authData).subscribe(response => {
       if (isNumeric(response)) {
         console.log('plmz');
-        sessionStorage.setItem('userId', response);
+        sessionStorage.setItem('userId', String(response));
         this.router.navigate(['profile']);
       } else {
         console.log(response);

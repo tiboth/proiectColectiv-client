@@ -10,15 +10,15 @@ import {Profil} from '../../shared/models/Profil';
 })
 export class ProfileComponent implements OnInit {
 
-  profil: Profil;
+  profil;
 
   constructor(private profilService: ProfilService) { }
 
   ngOnInit() {
-    const id = sessionStorage.getItem('userId');
+    const id = +sessionStorage.getItem('userId');
     this.profilService.getProfil(id).subscribe(response => {
       this.profil = response;
-      console.log(this.profil);
+      console.log(this.profil.id);
     });
   }
 
