@@ -16,6 +16,7 @@ export class ProfileComponent implements OnInit {
   photo: string;
   profils: Array<Profil>;
 
+
   constructor(private profilService: ProfilService,
               private toastr: ToastrService) { }
 
@@ -46,5 +47,6 @@ export class ProfileComponent implements OnInit {
     console.log('itt');
     this.toastr.success('Hello, Im the toastr message.');
   }
+
 
 }
