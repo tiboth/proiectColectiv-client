@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {LoginComponent} from './pages/login/login.component';
 import { HeaderComponent } from './pages/header/header.component';
+import { UpdateinfoComponent } from './pages/updateinfo/updateinfo.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeaderComponent } from './pages/header/header.component';
     SkillComponent,
     ProfileComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    UpdateinfoComponent
   ],
   imports: [
     BrowserModule,

@@ -32,4 +32,8 @@ export class ProfilService {
       .get<Array<Profil>>(url);
   }
 
+  postProfil(profil){
+    return this.httpClient.post(this.baseUrl+"/profil/updateProfil",profil);
+}
+
 }
