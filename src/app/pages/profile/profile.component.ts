@@ -10,8 +10,10 @@ import {Profil} from '../../shared/models/Profil';
 })
 export class ProfileComponent implements OnInit {
 
+  selectedValue = null;
   profil;
   photo: string;
+  profils: Array<Profil>;
 
   constructor(private profilService: ProfilService) { }
 
@@ -21,6 +23,19 @@ export class ProfileComponent implements OnInit {
       this.profil = response;
       this.photo = this.profil.image;
       console.log(this.profil.id);
+    });
+    this.profilService.getProfils().subscribe(response => {
+      this.profils = response;
+      console.log(this.profils);
+    });
+  }
+
+  onChange() {
+    console.log(this.selectedValue.id);
+    this.profilService.getProfil(this.selectedValue.id).subscribe(response => {
+      this.profil = response;
+      this.photo = this.profil.image;
+      console.log(this.profil);
     });
   }
 
