@@ -12,6 +12,8 @@ import {FormsModule} from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {LoginComponent} from './pages/login/login.component';
 import { HeaderComponent } from './pages/header/header.component';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { HeaderComponent } from './pages/header/header.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
