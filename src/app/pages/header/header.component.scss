@@ -1,6 +1,12 @@
 body {margin:0;}
 
+#img {
+  position: absolute;
+  right: 5px;
+}
+
 ul {
+  position: relative;
   list-style-type: none;
   margin: 0;
   padding: 0;
