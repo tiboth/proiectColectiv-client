@@ -11,6 +11,7 @@ import {Profil} from '../../shared/models/Profil';
 export class ProfileComponent implements OnInit {
 
   profil;
+  photo: string;
 
   constructor(private profilService: ProfilService) { }
 
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit {
     const id = +sessionStorage.getItem('userId');
     this.profilService.getProfil(id).subscribe(response => {
       this.profil = response;
+      this.photo = this.profil.image;
       console.log(this.profil.id);
     });
   }
