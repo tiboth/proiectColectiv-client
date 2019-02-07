@@ -4,6 +4,7 @@ import {LoginComponent} from './pages/login/login.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {SkillComponent} from './pages/skill/skill.component';
 import {ReportComponent} from './pages/report/report.component';
+import { UpdateinfoComponent } from './pages/updateinfo/updateinfo.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
     path: 'report',
     component : ReportComponent
   },
+  {
+    path: 'editInfo',
+    component : UpdateinfoComponent
+  }
+  ,
   {
     path: '**',
     redirectTo : ''

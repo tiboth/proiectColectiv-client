@@ -6,6 +6,7 @@ import { AuthUser } from '../../shared/models/user';
 import {Router} from '@angular/router';
 import {isNumber} from 'util';
 import {isNumeric} from 'rxjs/internal-compatibility';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -34,7 +36,7 @@ export class LoginComponent implements OnInit {
 
     this.loginService.login(authData).subscribe(response => {
       if (isNumeric(response)) {
-        console.log('plmz');
+        this.toastr.success('Logged in');
         sessionStorage.setItem('userId', String(response));
         this.router.navigate(['profile']);
       } else {

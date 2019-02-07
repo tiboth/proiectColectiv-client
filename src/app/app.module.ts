@@ -13,6 +13,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import {LoginComponent} from './pages/login/login.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { UpdateinfoComponent } from './pages/updateinfo/updateinfo.component';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { UpdateinfoComponent } from './pages/updateinfo/updateinfo.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
