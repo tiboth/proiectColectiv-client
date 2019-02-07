@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfilService} from '../../services/profil.service';
 import {Profil} from '../../shared/models/Profil';
-
 @Component({
   selector: 'app-updateinfo',
   templateUrl: './updateinfo.component.html',
