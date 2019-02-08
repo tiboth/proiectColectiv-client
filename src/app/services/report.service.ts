@@ -5,6 +5,7 @@ import { ApiService } from './api-service.service';
 import { AuthUser } from '../shared/models/user';
 import {Skill} from '../shared/models/Skill';
 import {HttpClient} from '@angular/common/http';
+import {Report} from '../shared/models/Report';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ReportService {
   ) {
   }
 
-  getSkills(id: number): Observable<Skill[]> {
-    return this.apiService.getRequest('user/findSkills?id=' + id);
+  getReports(): Observable<Report[]> {
+    return this.apiService.getRequest('report/findAll');
   }
 }

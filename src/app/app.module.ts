@@ -12,7 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {LoginComponent} from './pages/login/login.component';
 import { HeaderComponent } from './pages/header/header.component';
-
+import {Users} from './subscribe/Users';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { HeaderComponent } from './pages/header/header.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Users],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

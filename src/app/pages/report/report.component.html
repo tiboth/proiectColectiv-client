@@ -1,29 +1,6 @@
 
 <app-header></app-header>
 <div class="down">
-
-  <div class="center-search">
-    <form>
-      <input type="text" name="search" placeholder="Search..">
-    </form>
-  </div>
-
-  <fieldset>
-    <div class="radio">
-      Filter By:
-      <input type="radio" class="radio" name="x" value="y" id="a" />
-      <label for="a">ID</label>
-      <input type="radio" class="radio" name="x" value="z" id="b" />
-      <label for="b">Name</label>
-      <input type="radio" class="radio" name="x" value="z" id="c" />
-      <label for="c">Region</label>
-      <input type="radio" class="radio" name="x" value="z" id="d" />
-      <label for="d">Skills</label>
-      <input type="radio" class="radio" name="x" value="z" id="e" />
-      <label for="e">Salary</label>
-    </div>
-  </fieldset>
-
   <div class="center-table">
     <table id="customers">
       <thead>
@@ -38,7 +15,7 @@
         <tr *ngFor="let user of backUsers">
           <td align="center">{{ user.id }}</td>
           <td align="center">{{ user.username}}</td>
-          <td align="center">{{ user.skills}}</td>
+          <td align="center"><div *ngFor="let skill of user.skills">{{skill.skill}}</div></td>
           <td align="center">{{ user.salary }}</td>
         </tr>
       </tbody>

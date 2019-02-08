@@ -6,6 +6,9 @@ import {NgForm} from '@angular/forms';
 import {ReportService} from '../../services/report.service';
 import {__await} from 'tslib';
 import {async} from 'rxjs/internal/scheduler/async';
+import {Users} from '../../subscribe/Users';
+import {Report} from '../../shared/models/Report';
+
 
 @Component({
   selector: 'app-report',
@@ -15,23 +18,16 @@ import {async} from 'rxjs/internal/scheduler/async';
 export class ReportComponent implements OnInit {
 
 
-  backUsers: User[];
+  backUsers: Report[];
   i: number;
 
-  constructor(private loginService: LoginService) {
+  constructor(private reportService: ReportService) {
   }
 
   ngOnInit() {
-      this.loginService.getUsers().subscribe(response => {
+      this.reportService.getReports().subscribe(response => {
       this.backUsers = response;
     });
-    console.log(this.backUsers);
-    // this.backUsers.forEach(function (value) {
-    //   this.reportService.getSkills(value.id).subscribe(response => {
-    //     console.log(response);
-    //   });
-    //   console.log(value);
-    // });
   }
 
 
