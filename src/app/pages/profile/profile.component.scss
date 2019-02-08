@@ -16,13 +16,14 @@ html{
 
 .selectContainer {
   position:relative;
-  margin-left: 85%;
+  margin-top: 20px;
+  margin-left: 80%;
   width: 250px;
 }
 
 .ProfileCardContainer {
   position: relative;
-  margin-left: 35%;
+  margin-left: 30%;
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
   -webkit-animation-name: avatar;
@@ -41,12 +42,12 @@ html{
   //background: url(var());
   //background: url("C:/Users/botht/Desktop/facultate/semestrul5/ProjectColectiv/tihamer.jpg");
   background-size: cover;
-  height: 22em;
-  width: 22em;
+  height: 15em;
+  width: 15em;
   border-radius: 350px;
   border: solid 1px #8c8c8c;
   box-shadow: $softShadow;
-  margin-left: 6em;
+  margin-left: 5em;
 
 }
 
@@ -122,27 +123,28 @@ html{
 }
 
 .ProfileCardTop {
-  margin-top: 0.7em;
-  width: 35em;
-  height: 55px;
+  margin-top: 0.1em;
+  width: 27em;
+  height: 50px;
 }
 
 .ProfileCardName{
   position: absolute;
-  width: 560px;
-  margin-top: 1.3em;
+  width: 380px;
+  margin-top: 1.1em;
+  margin-left: 30px;
   text-align: center;
   color: $white;
   font-family: Arial, sans-serif;
-  font-size: 45px;
+  font-size: 40px;
   text-shadow: 0 -1px 0 #333;
   letter-spacing: 0.07em;
 }
 
 .ProfileCardBox {
-  width: 35em;
-  height: 20.625em;
-  margin-top:5em;
+  width: 27em;
+  height: 16em;
+  margin-top:2em;
   background-color: $white;
   box-shadow: $softShadow;
   border-bottom-left-radius: $cardBorderR;
@@ -151,7 +153,7 @@ html{
 
 .ProfileCardTextTitle {
   float: left;
-  margin: 3em 0 0 5em;
+  margin: 3em 0 0 1em;
   width: 2.5em;
   list-style: none;
   font-family: Arial, sans-serif;
@@ -166,7 +168,7 @@ html{
 }
 
 .ProfileCardText {
-  margin-left: 12em;
+  margin-left: 10em;
   padding-top: 3em;
   list-style: none;
   font-family: Arial, sans-serif;
@@ -202,4 +204,28 @@ html{
   background: url("https://raw.github.com/stahlfest/Valf-Profilecard/master/place.png") no-repeat;
   background-position: 1.3em;
   color: transparent;
+}
+
+.edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#mybutton {
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#mybutton:hover{
+  background:#fff;
+  color:#1AAB8A;
 }
