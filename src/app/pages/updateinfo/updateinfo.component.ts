@@ -17,8 +17,8 @@ export class UpdateinfoComponent implements OnInit {
 
   ngOnInit() {
     // const id = +sessionStorage.getItem('userId');
-    const id = 1
-    this.profilService.getProfil(id).subscribe(response => {
+    const id = 1;
+    this.profilService.getProfil(String(id)).subscribe(response => {
       this.profil = response;
       this.photo = this.profil.image;
       console.log(this.profil.id);
