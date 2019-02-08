@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router';
 
 import { LoginService } from '../../services/login.service';
 import { AuthUser } from '../../shared/models/user';
-import {Router} from '@angular/router';
-import {isNumber} from 'util';
-import {isNumeric} from 'rxjs/internal-compatibility';
 import {ToastrService} from 'ngx-toastr';
+import { ProfilService } from 'src/app/services/profil.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private profilService: ProfilService,
   ) { }
 
   ngOnInit() {
@@ -35,14 +35,15 @@ export class LoginComponent implements OnInit {
     console.log(authData);
 
     this.loginService.login(authData).subscribe(response => {
-      if (isNumeric(response)) {
+      console.log(response);
+      const userId = Number(response);
+      if (!Number.isNaN(userId)) {
         this.toastr.success('Logged in');
-        sessionStorage.setItem('userId', String(response));
+        this.profilService.setProfileId(userId);
         this.router.navigate(['profile']);
       } else {
-        console.log(response);
+        this.toastr.error('Erro loggin in');
       }
-
     });
   }
 

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +14,7 @@ import {FormsModule} from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import {LoginComponent} from './pages/login/login.component';
 import { HeaderComponent } from './pages/header/header.component';
-import {ToastrModule} from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SkillComponent,
     ProfileComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

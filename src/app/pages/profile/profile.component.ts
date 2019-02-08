@@ -16,12 +16,15 @@ export class ProfileComponent implements OnInit {
   photo: string;
   profils: Array<Profil>;
 
-  constructor(private profilService: ProfilService,
-              private toastr: ToastrService) { }
+  constructor(
+    private profilService: ProfilService,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit() {
-    const id = +sessionStorage.getItem('userId');
-    this.profilService.getProfil(id).subscribe(response => {
+    const currentUser = this.profilService.getCurrentUser();
+    this.profilService.getProfil(currentUser).subscribe(response => {
+      console.log(response);
       this.profil = response;
       this.photo = this.profil.image;
       console.log(this.profil.id);

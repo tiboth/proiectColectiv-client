@@ -12,18 +12,31 @@ import {HttpClient} from '@angular/common/http';
 export class ProfilService {
 
   private baseUrl = 'http://localhost:8080/';
+  private currentProfileId = null;
 
   constructor(
     private apiService: ApiService,
     private httpClient: HttpClient
-  ) { }
+  ) {
+    this.currentProfileId = sessionStorage.getItem('userId');
+  }
 
   login(authData: AuthUser): Observable<any> {
     return this.apiService.postRequest('user/loginUser', authData);
   }
 
-  getProfil(id: number): Observable<any> {
-    return this.apiService.getRequest('profil/?profilId=' + id);
+  setProfileId(userId: number) {
+    const id = String(userId);
+    this.currentProfileId = id;
+    sessionStorage.setItem('userId', id);
+  }
+
+  getCurrentUser() {
+    return this.currentProfileId;
+  }
+
+  getProfil(id: string): Observable<any> {
+    return this.apiService.getRequest(`profil?profilId=${Number(id)}`);
   }
 
   getProfils(): Observable<Array<Profil>> {

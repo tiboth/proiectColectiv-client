@@ -5,6 +5,7 @@ import {share} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
+import { ToastNotificationService } from './toast-notification.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,18 +15,38 @@ export class ApiService {
   apiEndpoint: string;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private toastService: ToastNotificationService
   ) {
     this.apiEndpoint = environment.apiEndpoint;
   }
 
-  getRequest(path: string,  options?): Observable<any> {
-    return this.http.get(`${this.apiEndpoint}/${path}`)
+
+  checkResponse($response: Observable<any>, showSuccess = null) {
+    $response.subscribe((resp) => {
+      if (showSuccess) {
+        console.log(resp);
+        this.toastService.showSuccess('Success', resp.data);
+      }
+    }, (err) =>{
+        console.error(err);
+        const { error: respError } = err;
+        this.toastService.showError(respError.message);
+    });
+  }
+
+  getRequest(path: string, params?, options?): Observable<any> {
+    console.log(params);
+    const $response = this.http.get(`${this.apiEndpoint}/${path}`, params)
     .pipe(share());
+    this.checkResponse($response);
+    return $response;
   }
 
   postRequest(path: string,  params, options?): Observable<any> {
-    return this.http.post(`${this.apiEndpoint}/${path}`, params)
+    const $response = this.http.post(`${this.apiEndpoint}/${path}`, params)
     .pipe(share());
+    this.checkResponse($response);
+    return $response;
   }
 }

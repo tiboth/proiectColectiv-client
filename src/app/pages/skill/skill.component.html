@@ -1,46 +1,42 @@
-<html>
 <app-header></app-header>
-<body>
-  <header id="skillBar" ><p>Skill</p></header>
-  <div id="container">
-    <div id="table">
-      <table>
+<header id="skillBar">
+  <p>Skill</p>
+</header>
+<div id="container">
+  <div id="table">
+    <table>
 
-        <thead>
-          <th><a>ID</a></th>
-          <th><a>Skill</a></th>
-        </thead>
+      <thead>
+        <th><a>ID</a></th>
+        <th><a>Skill</a></th>
+      </thead>
 
-        <tbody>
+      <tbody>
         <tr *ngFor="let skill of skills;">
           <td><a>{{skill.id}}</a></td>
           <td><a>{{skill.skill}}</a></td>
         </tr>
-        </tbody>
+      </tbody>
 
-      </table>
+    </table>
 
-    </div>
-
-    <div id="formular">
-      <form #f="ngForm" (ngSubmit)="addSkill(f)" novalidate>
-          <input type="text" name="skill" ngModel class="form-control" placeholder="Skill..."><br>
-
-          <div id="buttons">
-
-              <input type="submit" id="add" value="Add Skill"><br>
-
-          </div>
-      </form>
-
-      <!--<form>-->
-        <!--<input type="text" name="id" class="form-control" placeholder="Id..."><br>-->
-        <!--<input type="submit" id="delete" value="Delete Skill"><br>-->
-      <!--</form>-->
-
-    </div>
   </div>
 
-</body>
-</html>
+  <div id="formular">
+    <form #f="ngForm" (ngSubmit)="addSkill(f)" novalidate>
+      <input type="text" name="skill" ngModel class="form-control" placeholder="Skill..."><br>
 
+      <div id="buttons">
+
+        <input type="submit" id="add" value="Add Skill"><br>
+
+      </div>
+    </form>
+
+    <!--<form>-->
+    <!--<input type="text" name="id" class="form-control" placeholder="Id..."><br>-->
+    <!--<input type="submit" id="delete" value="Delete Skill"><br>-->
+    <!--</form>-->
+
+  </div>
+</div>
