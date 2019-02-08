@@ -205,3 +205,27 @@ html{
   background-position: 1.3em;
   color: transparent;
 }
+
+.edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#mybutton {
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+#mybutton:hover{
+  background:#fff;
+  color:#1AAB8A;
+}

@@ -36,7 +36,6 @@ export class ApiService {
   }
 
   getRequest(path: string, params?, options?): Observable<any> {
-    console.log(params);
     const $response = this.http.get(`${this.apiEndpoint}/${path}`, params)
     .pipe(share());
     this.checkResponse($response);

@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.toastContainer);
-     setTimeout(() =>{ this.toastrService.overlayContainer = this.toastContainer}, 500);
-
+     this.toastrService.overlayContainer = this.toastContainer;
   }
 }

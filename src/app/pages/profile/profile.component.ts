@@ -42,12 +42,12 @@ export class ProfileComponent implements OnInit {
       this.photo = this.profil.image;
       console.log(this.profil);
     });
-    this.toastr.success('ityt');
   }
 
   showToaster() {
     console.log('itt');
     this.toastr.success('Hello, Im the toastr message.');
   }
+
 
 }

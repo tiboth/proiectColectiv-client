@@ -40,9 +40,11 @@ export class ProfilService {
   }
 
   getProfils(): Observable<Array<Profil>> {
-    const url = `${this.baseUrl}profil/profils/?`;
-    return this.httpClient
-      .get<Array<Profil>>(url);
+    return this.apiService.getRequest('profil/profils/');
+  }
+
+  postProfil(profil: Profil) {
+    return this.apiService.postRequest('profil/updateProfil',profil);
   }
 
 }

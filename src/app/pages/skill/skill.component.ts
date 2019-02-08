@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {AuthUser} from '../../shared/models/user';
 import {LoginService} from '../../services/login.service';
@@ -12,28 +12,35 @@ import {Skill} from '../../shared/models/Skill';
 })
 export class SkillComponent implements OnInit {
 
+  @ViewChild('f') skillForm: NgForm ;
   skills: Skill[];
+
 
   constructor(private skillService: SkillService) { }
 
   ngOnInit() {
+    this.getSkills();
+  }
+
+  getSkills() {
     this.skillService.getSkills().subscribe(response => {
-      console.log(response);
       this.skills = response;
-      console.log(this.skills[0].id);
+      this.skillForm.reset();
     });
+  }
+
+  resetForm() {
+
   }
 
   addSkill(form: NgForm) {
     const skill = {
       skill: form.value.skill
     } as Skill;
-    console.log(skill);
 
-    this.skillService.addSkill(skill).subscribe(response => {
-      console.log(response);
+    this.skillService.addSkill(skill).subscribe(() => {
+      this.getSkills();
     });
-    alert('skill added, refresh page!');
   }
 
 }
